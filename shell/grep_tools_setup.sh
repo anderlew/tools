@@ -1,5 +1,5 @@
 cat <<EOF
-Invoke ". build/grep_setup.sh" from your shell to add the following functions to your environment:
+Invoke ". grep_tools_setup.sh" from your shell to add the following functions to your environment:
 - cgrep:   Greps on all local C/C++ files.
 - jgrep:   Greps on all local Java files.
 - resgrep: Greps on all local res/*.xml files.

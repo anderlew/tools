@@ -1,5 +1,5 @@
 cat <<EOF
-Invoke ". build/grep_setup.sh" from your shell to add the following functions to your environment:
+Invoke ". android_tools_setup.sh" from your shell to add the following functions to your environment:
 - pid: show the process information by <pid> 
 - systemstack: dump the current stack trace of all threads in the system process
 
