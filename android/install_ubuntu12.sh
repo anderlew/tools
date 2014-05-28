@@ -22,7 +22,9 @@ sudo apt-get install samba system-config-samba -y
 sudo apt-get install smbfs -y
 sudo apt-get install lrzsz squid curl -y
 
-#sudo apt-get install krusader kdiff3 krename lha arj rar rpm kompare -y
+sudo apt-get install lha arj rar rpm -y
+
+#sudo apt-get install krusader kdiff3 krename kompare -y
 
 sudo apt-get install git -y
 sudo apt-get install gawk -y
