@@ -3,6 +3,7 @@ Invoke ". grep_tools_setup.sh" from your shell to add the following functions to
 - cgrep:   Greps on all local C/C++ files.
 - jgrep:   Greps on all local Java files.
 - resgrep: Greps on all local res/*.xml files.
+- fgrep:   Find file on all local files
 
 Look at the source to view more functions. The complete list is:
 EOF
@@ -20,8 +21,7 @@ function pid()
 
 # systemstack - dump the current stack trace of all threads in the system process
 # to the usual ANR traces file
-function systemstack()
-{
+function systemstack() {
     adb shell echo '""' '>>' /data/anr/traces.txt && adb shell chmod 776 /data/anr/traces.txt && adb shell kill -3 $(pid system_server)
 }
 
@@ -59,6 +59,11 @@ function cgrep()
 function resgrep()
 {
     for dir in `find . -name .repo -prune -o -name .git -prune -o -name res -type d`; do find $dir -type f -name '*\.xml' -print0 | xargs -0 grep --color -n "$@"; done;
+}
+
+function fgrep()
+{
+    find . -name .repo -prune -o -name .git -prune -o  -type f -name "*$3*" -exec ls --color=auto -d {} \;
 }
 
 case `uname -s` in
